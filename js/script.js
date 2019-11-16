@@ -21,7 +21,7 @@ $(document).ready(function(){
   });
 
   var typed = new Typed(".typed", {
-    strings: ["I´m a Designer ...", "... and I like to code."],
+    strings: ["I´m a Designer ...", "and I like to code ..."],
     typeSpeed: 80,
     loop: true,
     showCursor: false,
@@ -30,10 +30,11 @@ $(document).ready(function(){
 
   $('.owl-carousel').owlCarousel({
     center: true,
-    // autoplay:true,
+    autoplay:true,
+    autoplayTimeout: 2000,
     loop:true,
     // dotsEach:true,
-    // nav:true,
+    nav:true,
     // margin:10,
     items: 4,
     responsive:{
