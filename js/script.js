@@ -16,7 +16,7 @@ $(document).ready(function(){
 
   $('#slides').superslides({
     animation: 'fade',
-    play: 160,
+    play: 1000,
     pagination: false
   });
 
