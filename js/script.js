@@ -16,7 +16,7 @@ $(document).ready(function(){
 
   $('#slides').superslides({
     animation: 'fade',
-    play: 80,
+    play: 160,
     pagination: false
   });
 
@@ -26,7 +26,7 @@ $(document).ready(function(){
     loop: true,
     showCursor: false,
     startDelay: 1000
-  })
+  });
 
   $('.owl-carousel').owlCarousel({
     center: true,
