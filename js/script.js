@@ -5,7 +5,7 @@ $(window).on("load", function(){
     $(".items").isotope({
       filter: '*',
       animationOptions:{
-        duration: 1000,
+        duration: 100,
         easing: 'linear',
         queue: false
       }
@@ -16,7 +16,7 @@ $(document).ready(function(){
 
   $('#slides').superslides({
     animation: 'fade',
-    play: 80,
+    play: 50000,
     pagination: false
   });
 
@@ -26,7 +26,7 @@ $(document).ready(function(){
     loop: true,
     showCursor: false,
     startDelay: 1000
-  })
+  });
 
   $('.owl-carousel').owlCarousel({
     center: true,
