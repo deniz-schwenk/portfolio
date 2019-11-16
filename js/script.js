@@ -5,7 +5,7 @@ $(window).on("load", function(){
     $(".items").isotope({
       filter: '*',
       animationOptions:{
-        duration: 1000,
+        duration: 5000,
         easing: 'linear',
         queue: false
       }
