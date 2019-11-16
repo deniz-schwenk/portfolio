@@ -5,7 +5,7 @@ $(window).on("load", function(){
     $(".items").isotope({
       filter: '*',
       animationOptions:{
-        duration: 5000,
+        duration: 100,
         easing: 'linear',
         queue: false
       }
@@ -16,7 +16,7 @@ $(document).ready(function(){
 
   $('#slides').superslides({
     animation: 'fade',
-    play: 1000,
+    play: 50000,
     pagination: false
   });
 
