@@ -21,7 +21,7 @@ $(document).ready(function(){
   });
 
   var typed = new Typed(".typed", {
-    strings: ["I´m a Designer ...", "and I like to code ..."],
+    strings: ["I´m a Designer ...", "but not only ..."],
     typeSpeed: 80,
     loop: true,
     showCursor: false,
