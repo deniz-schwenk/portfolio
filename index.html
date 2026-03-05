@@ -824,43 +824,69 @@ section {
 .lightbox-next { right: 0.5rem; }
 
 /* ═══════════════════════════════════════════
-   REFERENCES
+   STATIONS
    ═══════════════════════════════════════════ */
-.references-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 1px;
-  background: var(--border);
+.stations-list {
   margin-top: 2.5rem;
+  display: flex;
+  flex-direction: column;
 }
 
-.reference-card {
-  background: var(--bg-primary);
-  padding: clamp(1.5rem, 3vw, 2.5rem);
-  transition: background 0.3s;
+.station {
+  display: grid;
+  grid-template-columns: 140px 1fr auto;
+  gap: 1.5rem;
+  padding: 1.25rem 0;
+  border-bottom: 1px solid var(--border);
+  align-items: baseline;
+  transition: background 0.2s;
 }
 
-.reference-card:hover { background: var(--bg-secondary); }
+.station:first-child {
+  border-top: 1px solid var(--border);
+}
 
-.reference-source {
+.station-period {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  color: var(--text-muted);
+  letter-spacing: 0.04em;
+  white-space: nowrap;
+}
+
+.station-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+}
+
+.station-company {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.station-role {
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+}
+
+.station-location {
   font-family: var(--font-mono);
   font-size: 0.68rem;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  color: var(--accent);
-  margin-bottom: 1rem;
-}
-
-.reference-text {
-  font-size: 0.95rem;
-  color: var(--text-secondary);
-  line-height: 1.7;
-  font-style: italic;
+  color: var(--text-muted);
+  letter-spacing: 0.04em;
+  white-space: nowrap;
+  text-align: right;
 }
 
 @media (max-width: 768px) {
-  .references-grid {
+  .station {
     grid-template-columns: 1fr;
+    gap: 0.25rem;
+  }
+  .station-location {
+    text-align: left;
   }
 }
 
@@ -1057,10 +1083,10 @@ footer {
   <div class="container">
     <div class="section-label reveal">About</div>
     <div class="about-text reveal">
-      <strong>20+ years at the intersection of creativity, production, and technology.</strong> From campaign concepts at international agencies to 14 years of newsroom production at PREMIUM GRUPPE — to building AI-powered content pipelines as a startup co-founder. I translate ideas into functioning systems — precise, on deadline, quality-assured.
+      <strong>20+ years at the intersection of creativity, production, and technology.</strong> From campaign concepts at international advertising agencies to newsroom production to building AI-powered content pipelines as a startup co-founder. I translate ideas into functioning systems — precise, on deadline, quality-assured.
     </div>
     <div class="about-quote reveal">
-      "Rather in the engine room than on deck in a white uniform." — Substance over presentation. Always.
+      "Rather in the engine room than on deck in a white suit." — Substance over presentation. Always.
     </div>
   </div>
 </section>
@@ -1353,20 +1379,76 @@ footer {
   </div>
 </div>
 
-<!-- ════════════ REFERENCES ════════════ -->
+<!-- ════════════ STATIONS ════════════ -->
 <hr class="section-divider">
-<section id="references">
+<section id="stations">
   <div class="container">
-    <div class="section-label reveal">References</div>
-    <div class="references-grid reveal-stagger">
-      <div class="reference-card">
-        <div class="reference-source">PREMIUM-GRUPPE · Work Certificate</div>
-        <div class="reference-text">"Full recognition" — equivalent to highest grade. Analytical thinking, fast comprehension, effective problem-solving, trustworthiness, and absolute reliability under changing demands.</div>
+    <div class="section-label reveal">Stations</div>
+    <div class="stations-list reveal-stagger">
+
+      <div class="station">
+        <span class="station-period">2023 — 2025</span>
+        <div class="station-info">
+          <span class="station-company"><a href="https://app.gistable.com/" target="_blank" rel="noopener" style="color: var(--text-primary); border-bottom: 1px solid var(--border-light);">Gistable gUG</a></span>
+          <span class="station-role">Co-Founder · Head of Product & AI</span>
+        </div>
+        <span class="station-location">Berlin</span>
       </div>
-      <div class="reference-card">
-        <div class="reference-source">Gistable · Reference</div>
-        <div class="reference-text">Structured, fast, and reliable. Holistic view of product, technology, and impact. High-quality results under tight timelines. Excellent interface understanding across product, tech, and content.</div>
+
+      <div class="station">
+        <span class="station-period">2025</span>
+        <div class="station-info">
+          <span class="station-company">GesBiT gGmbH</span>
+          <span class="station-role">External · AI Project Lead (MVP "BerLina")</span>
+        </div>
+        <span class="station-location">Berlin</span>
       </div>
+
+      <div class="station">
+        <span class="station-period">2011 — 2025</span>
+        <div class="station-info">
+          <span class="station-company">PREMIUM-GRUPPE</span>
+          <span class="station-role">Production Editor</span>
+        </div>
+        <span class="station-location">Berlin</span>
+      </div>
+
+      <div class="station">
+        <span class="station-period">2009 — 2011</span>
+        <div class="station-info">
+          <span class="station-company">Dorland</span>
+          <span class="station-role">Art Director</span>
+        </div>
+        <span class="station-location">Berlin</span>
+      </div>
+
+      <div class="station">
+        <span class="station-period">2008 — 2009</span>
+        <div class="station-info">
+          <span class="station-company">Rafineri</span>
+          <span class="station-role">Art Director</span>
+        </div>
+        <span class="station-location">Istanbul</span>
+      </div>
+
+      <div class="station">
+        <span class="station-period">2006 — 2008</span>
+        <div class="station-info">
+          <span class="station-company">Ogilvy</span>
+          <span class="station-role">Art Director</span>
+        </div>
+        <span class="station-location">Istanbul</span>
+      </div>
+
+      <div class="station">
+        <span class="station-period">2004 — 2006</span>
+        <div class="station-info">
+          <span class="station-company">Grey Worldwide</span>
+          <span class="station-role">Junior Art Director</span>
+        </div>
+        <span class="station-location">Istanbul</span>
+      </div>
+
     </div>
   </div>
 </section>
