@@ -823,6 +823,62 @@ section {
 .lightbox-prev { left: 0.5rem; }
 .lightbox-next { right: 0.5rem; }
 
+/* Collapsible */
+.collapsible-toggle {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-top: 2.5rem;
+  padding: 1rem 0;
+  border: none;
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+  background: none;
+  cursor: pointer;
+  width: 100%;
+  text-align: left;
+  transition: border-color 0.2s;
+}
+
+.collapsible-toggle:hover {
+  border-color: var(--accent);
+}
+
+.collapsible-toggle-text {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-secondary);
+  transition: color 0.2s;
+}
+
+.collapsible-toggle:hover .collapsible-toggle-text {
+  color: var(--text-primary);
+}
+
+.collapsible-toggle-icon {
+  font-family: var(--font-mono);
+  font-size: 0.9rem;
+  color: var(--accent);
+  transition: transform 0.3s;
+  display: inline-block;
+}
+
+.collapsible-toggle.open .collapsible-toggle-icon {
+  transform: rotate(45deg);
+}
+
+.collapsible-content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.collapsible-content.open {
+  max-height: 2000px;
+}
+
 /* ═══════════════════════════════════════════
    STATIONS
    ═══════════════════════════════════════════ */
@@ -1086,7 +1142,7 @@ footer {
       <strong>20+ years at the intersection of creativity, production, and technology.</strong> From campaign concepts at international advertising agencies to newsroom production to building AI-powered content pipelines as a startup co-founder. I translate ideas into functioning systems — precise, on deadline, quality-assured.
     </div>
     <div class="about-quote reveal">
-      "Rather in the engine room than on deck in a white suit." — Substance over presentation. Always.
+      "Rather in the engine room than on deck in a white uniform." — Substance over presentation. Always.
     </div>
   </div>
 </section>
@@ -1196,16 +1252,15 @@ footer {
       <div class="skill-category">
         <h3>AI / LLM</h3>
         <div class="skill-tags">
-          <span class="skill-tag">OpenAI API</span>
-          <span class="skill-tag">Claude API</span>
-          <span class="skill-tag">Midjourney</span>
-          <span class="skill-tag">ElevenLabs</span>
-          <span class="skill-tag">Whisper</span>
+          <span class="skill-tag">Multi-Agent Pipeline Design</span>
+          <span class="skill-tag">Model Evaluation & Selection</span>
+          <span class="skill-tag">Prompt Engineering</span>
+          <span class="skill-tag">LLM Orchestration (Python)</span>
           <span class="skill-tag">Claude Code</span>
           <span class="skill-tag">Cursor</span>
-          <span class="skill-tag">Various Frameworks</span>
-          <span class="skill-tag">Flow</span>
-          <span class="skill-tag">and many more</span>
+          <span class="skill-tag">OpenAI API</span>
+          <span class="skill-tag">Anthropic API</span>
+          <span class="skill-tag">Google AI API</span>
         </div>
       </div>
 
@@ -1233,9 +1288,10 @@ footer {
     </div>
 
     <div class="skills-exploring reveal">
-      <h3>Currently Exploring</h3>
-      <div class="skill-tags">
-        <span class="skill-tag">GenAI for STL</span>
+      <h3>Currently Building</h3>
+      <div style="margin-top: 0.5rem;">
+        <a href="https://independent-wire.org" target="_blank" rel="noopener" style="font-family: var(--font-mono); font-size: 0.75rem; color: var(--accent); letter-spacing: 0.02em; border-bottom: 1px solid var(--border-light);">Independent Wire</a>
+        <span style="font-size: 0.82rem; color: var(--text-secondary); margin-left: 0.5rem;">Open-source AI newsroom. 8 agents, 70+ sources, 20+ languages.</span>
       </div>
     </div>
   </div>
@@ -1286,6 +1342,11 @@ footer {
 <section id="projects">
   <div class="container">
     <div class="section-label reveal">Selected Work</div>
+    <button class="collapsible-toggle reveal" id="gallery-toggle" aria-expanded="false" aria-controls="gallery-content">
+      <span class="collapsible-toggle-icon">+</span>
+      <span class="collapsible-toggle-text">Show work samples</span>
+    </button>
+    <div class="collapsible-content" id="gallery-content">
     <div class="gallery-grid reveal-stagger">
 
       <div class="gallery-item" data-index="0">
@@ -1305,9 +1366,9 @@ footer {
       </div>
 
       <div class="gallery-item" data-index="2">
-        <img src="images/portfolio/CUM1.png" alt="Cumhuriyet newspaper world women's day campaign" loading="lazy">
+        <img src="images/portfolio/CUM1.png" alt="Cumhuriyet newspaper press freedom campaign" loading="lazy">
         <div class="gallery-overlay">
-          <span class="gallery-overlay-label">Campaign · world women's day</span>
+          <span class="gallery-overlay-label">Campaign · Press Freedom</span>
           <span class="gallery-overlay-title">Cumhuriyet</span>
         </div>
       </div>
@@ -1364,6 +1425,7 @@ footer {
     <div style="margin-top: 1.5rem; font-family: var(--font-mono); font-size: 0.7rem; color: var(--text-muted); letter-spacing: 0.05em;" class="reveal">
       More work samples available on request.
     </div>
+    </div><!-- /collapsible-content -->
   </div>
 </section>
 
@@ -1396,7 +1458,7 @@ footer {
       </div>
 
       <div class="station">
-        <span class="station-period">2025</span>
+        <span class="station-period">2024 — 2025</span>
         <div class="station-info">
           <span class="station-company">GesBiT gGmbH</span>
           <span class="station-role">External · AI Project Lead (MVP "BerLina")</span>
@@ -1408,7 +1470,7 @@ footer {
         <span class="station-period">2011 — 2025</span>
         <div class="station-info">
           <span class="station-company">PREMIUM-GRUPPE</span>
-          <span class="station-role">Production Editor</span>
+          <span class="station-role">Produktionsredakteur · Deputy CvD (POLITICO, WELT, Business Insider)</span>
         </div>
         <span class="station-location">Berlin</span>
       </div>
@@ -1423,7 +1485,7 @@ footer {
       </div>
 
       <div class="station">
-        <span class="station-period">2008 — 2009</span>
+        <span class="station-period">2007 — 2009</span>
         <div class="station-info">
           <span class="station-company">Rafineri</span>
           <span class="station-role">Art Director</span>
@@ -1432,7 +1494,7 @@ footer {
       </div>
 
       <div class="station">
-        <span class="station-period">2006 — 2008</span>
+        <span class="station-period">2006 — 2007</span>
         <div class="station-info">
           <span class="station-company">Ogilvy</span>
           <span class="station-role">Art Director</span>
@@ -1585,6 +1647,22 @@ footer {
       }
     });
   }
+
+  // ── Collapsible gallery toggle ──
+  var galleryToggle = document.getElementById('gallery-toggle');
+  var galleryContent = document.getElementById('gallery-content');
+
+  galleryToggle.addEventListener('click', function() {
+    var isOpen = galleryContent.classList.toggle('open');
+    galleryToggle.classList.toggle('open');
+    galleryToggle.setAttribute('aria-expanded', isOpen);
+    galleryToggle.querySelector('.collapsible-toggle-text').textContent = isOpen ? 'Hide work samples' : 'Show work samples';
+    // trigger reveal on items inside if opening for the first time
+    if (isOpen) {
+      var inner = galleryContent.querySelectorAll('.reveal, .reveal-stagger');
+      inner.forEach(function(el) { el.classList.add('visible'); });
+    }
+  });
 
   // ── Lightbox ──
   var lightbox = document.getElementById('lightbox');
