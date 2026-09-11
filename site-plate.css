@@ -68,7 +68,7 @@ header.top .lang[aria-current="true"]{color:var(--spot);cursor:default}
 .plate{display:block;white-space:nowrap;font-family:var(--fx);font-variation-settings:'wdth' 125;font-weight:800;line-height:.78;letter-spacing:-.035em;text-transform:uppercase;font-size:9.4vw;margin:clamp(1.1rem,2.4vw,2.2rem) 0 clamp(.9rem,2vw,1.6rem)}
 .plate .dot{color:var(--spot)}
 .claim{grid-column:1/8;font-size:clamp(1.9rem,4.3vw,4.15rem);margin-top:clamp(1.4rem,3vw,2.6rem)}
-.claim .it{font-size:1.03em;line-height:.9}
+.claim .it{font-size:1.12em;line-height:.9}
 .coverside{grid-column:9/13;margin-top:clamp(1.4rem,3vw,2.9rem);display:flex;flex-direction:column;gap:1.1rem;align-items:flex-start}
 .avail{display:inline-flex;align-items:flex-start;gap:.5rem;background:var(--spot);padding:.45rem .7rem}
 .avail i{margin-top:.4em}
@@ -206,7 +206,7 @@ header.top .lang[aria-current="true"]{color:var(--spot);cursor:default}
 .contact .cd{color:rgba(245,243,238,.62)}
 .contact a{color:var(--paper)}
 .contact .stitle{color:var(--paper)}
-.contact .stitle .sp{font-family:var(--fs);font-style:italic;font-weight:350;color:var(--spot);letter-spacing:-.02em}
+.contact .stitle .sp{font-family:var(--fs);font-style:italic;font-weight:350;color:var(--spot);letter-spacing:-.02em;font-size:1.12em}
 .contact .shead{border-color:rgba(245,243,238,.4)}
 .contact .shead a.mailcd{color:var(--spot)}
 .contact .shead a.mailcd:hover{color:var(--paper)}
@@ -223,7 +223,7 @@ header.top .lang[aria-current="true"]{color:var(--spot);cursor:default}
 footer{background:var(--ink);color:rgba(245,243,238,.6);padding:1.2rem 0 2.2rem;display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap;border-top:1px solid rgba(245,243,238,.22)}
 
 /* ── reveal ── */
-.wm{display:inline-block;overflow:hidden;vertical-align:bottom;padding-bottom:.08em}
+.wm{display:inline-block;overflow:hidden;vertical-align:bottom;padding:.14em .18em .08em 0;margin:-.14em -.18em 0 0}
 .wi{display:inline-block;transform:translateY(106%);transition:transform 1s var(--ez)}
 .in .wi{transform:none}
 [data-rv]{opacity:0;transform:translateY(24px);transition:opacity .85s var(--ez),transform .85s var(--ez)}
