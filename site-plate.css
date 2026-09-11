@@ -223,8 +223,8 @@ header.top .lang[aria-current="true"]{color:var(--spot);cursor:default}
 footer{background:var(--ink);color:rgba(245,243,238,.6);padding:1.2rem 0 2.2rem;display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap;border-top:1px solid rgba(245,243,238,.22)}
 
 /* ── reveal ── */
-.wm{display:inline-block;overflow:hidden;vertical-align:bottom;padding:.14em .18em .08em 0;margin:-.14em -.18em 0 0}
-.wi{display:inline-block;transform:translateY(106%);transition:transform 1s var(--ez)}
+.wm{display:inline-block;vertical-align:baseline;padding-bottom:.08em;clip-path:inset(-.35em -.3em -.3em -.3em)}
+.wi{display:inline-block;transform:translateY(180%);transition:transform 1s var(--ez)}
 .in .wi{transform:none}
 [data-rv]{opacity:0;transform:translateY(24px);transition:opacity .85s var(--ez),transform .85s var(--ez)}
 [data-rv].in{opacity:1;transform:none}
