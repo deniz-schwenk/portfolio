@@ -16,7 +16,8 @@ function splitOne(el){
     el.appendChild(document.createTextNode(' '));
   });
 }
-function split(){ document.querySelectorAll('[data-split]').forEach(splitOne); }
+// skip headlines that are already split, so a second pass can never nest spans
+function split(){ document.querySelectorAll('[data-split]').forEach(el=>{ if(!el.querySelector('.wm')) splitOne(el); }); }
 
 /* ── 2. Language toggle (EN default, data-de holds the German string) ── */
 function i18n(){
@@ -37,8 +38,7 @@ function i18n(){
     document.dispatchEvent(new CustomEvent('langchange',{detail:l}));
   };
   btns.forEach(b=>b.addEventListener('click',e=>{
-    e.preventDefault(); apply(b.dataset.lang);
-    const next=btns.find(x=>x.getAttribute('aria-current')!=='true'); if(next) next.focus({preventScroll:true});
+    e.preventDefault(); if(b.getAttribute('aria-current')!=='true') apply(b.dataset.lang);
   }));
   let saved=null; try{ saved=localStorage.getItem('ds-site-lang'); }catch(e){}
   const q=new URLSearchParams(location.search).get('lang'); if(q==='de'||q==='en') saved=q;
