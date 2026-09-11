@@ -23,19 +23,26 @@ function i18n(){
   const nodes=[...document.querySelectorAll('[data-de]')];
   nodes.forEach(el=>{ if(!el.dataset.en) el.dataset.en=el.innerHTML.replace(/\s+/g,' ').trim(); });
   const btns=[...document.querySelectorAll('[data-lang]')];
-  const apply=l=>{
+  const apply=(l,initial)=>{
     nodes.forEach(el=>{
       const t = l==='de' ? el.dataset.de : el.dataset.en;
+      // initial pass runs before split()/reveals: swap text only, let them split + animate
+      if(initial){ if(l==='de') el.innerHTML=t; return; }
       if(el.hasAttribute('data-split')){ el.innerHTML=t; splitOne(el); el.classList.add('in'); }
       else el.innerHTML=t;
     });
     document.documentElement.lang=l;
     btns.forEach(b=>b.setAttribute('aria-current', b.dataset.lang===l ? 'true':'false'));
     try{ localStorage.setItem('ds-site-lang',l); }catch(e){}
+    document.dispatchEvent(new CustomEvent('langchange',{detail:l}));
   };
-  btns.forEach(b=>b.addEventListener('click',e=>{e.preventDefault();apply(b.dataset.lang)}));
+  btns.forEach(b=>b.addEventListener('click',e=>{
+    e.preventDefault(); apply(b.dataset.lang);
+    const next=btns.find(x=>x.getAttribute('aria-current')!=='true'); if(next) next.focus({preventScroll:true});
+  }));
   let saved=null; try{ saved=localStorage.getItem('ds-site-lang'); }catch(e){}
-  return saved==='de' ? ()=>apply('de') : ()=>apply('en');
+  const q=new URLSearchParams(location.search).get('lang'); if(q==='de'||q==='en') saved=q;
+  return ()=>apply(saved==='de' ? 'de' : 'en', true);
 }
 
 /* ── 3. Reveal on scroll ── */
