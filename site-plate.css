@@ -38,8 +38,10 @@ body.raster-on .raster{opacity:1}
 /* ── console bar ── */
 .console{position:fixed;left:0;right:0;bottom:0;height:34px;z-index:90;background:var(--paper);border-top:1px solid var(--line);display:flex;align-items:center;justify-content:space-between;gap:1rem;padding:0 var(--pad)}
 .console .bar{position:absolute;top:-1px;left:0;height:1px;background:var(--spot);width:100%;transform:scaleX(0);transform-origin:0 50%}
-.console span,.console button{font-family:var(--fx);font-variation-settings:'wdth' 76;font-weight:600;text-transform:uppercase;letter-spacing:.15em;font-size:.62rem;color:var(--ink);white-space:nowrap}
+.console span,.console a,.console button{font-family:var(--fx);font-variation-settings:'wdth' 76;font-weight:600;text-transform:uppercase;letter-spacing:.15em;font-size:.62rem;color:var(--ink);white-space:nowrap}
 .console button{background:none;border:0;padding:.2rem .4rem;cursor:pointer}
+.console a[href]{text-decoration:underline;text-decoration-color:var(--spot);text-decoration-thickness:2px;text-underline-offset:.35em;transition:background .3s var(--ez),box-shadow .3s var(--ez)}
+.console a[href]:hover{background:var(--spot);box-shadow:0 0 0 .3em var(--spot)}
 .console button[aria-pressed="true"]{background:var(--ink);color:var(--spot)}
 
 /* ── top chrome ── */
