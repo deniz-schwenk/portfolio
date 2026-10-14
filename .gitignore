@@ -1,0 +1,10 @@
+# Old 2019–2022 site and design source files: kept locally, not published
+/css/
+/js/
+/images/
+*.afphoto
+/Pol12 WAMSK 23.02.20 WSKKE-HP 1.png
+
+# Local tooling / OS noise
+.DS_Store
+.gstack/

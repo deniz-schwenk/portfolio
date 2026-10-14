@@ -42,7 +42,8 @@ function i18n(){
   }));
   let saved=null; try{ saved=localStorage.getItem('ds-site-lang'); }catch(e){}
   const q=new URLSearchParams(location.search).get('lang'); if(q==='de'||q==='en') saved=q;
-  return ()=>apply(saved==='de' ? 'de' : 'en', true);
+  // first visit (nothing stored, no ?lang) defaults to German; the static HTML stays English for no-JS readers
+  return ()=>apply(saved==='en' ? 'en' : 'de', true);
 }
 
 /* ── 3. Reveal on scroll ── */
